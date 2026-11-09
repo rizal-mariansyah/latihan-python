@@ -30,21 +30,29 @@ while True :
         print(f"\nnama produk: {nama_produk}")
         print(f"harga : Rp.{produk[nama_produk]}")
 
-        jumlah_barang = int(input("\nmasukan jumlah barang yang dibeli: "))
-        if jumlah_barang >0:
-            harga = produk[nama_produk]
-            subtotal = harga * jumlah_barang
-            total_belanja += subtotal
-            print(f"\njumlah barang: {jumlah_barang}")
-            print(f"total harga jumlah barang :Rp. {subtotal}")
+        while True:
+            try:
+
+                jumlah_barang = int(input("\nmasukan jumlah barang yang dibeli: "))
+                if jumlah_barang >0:
+                    harga = produk[nama_produk]
+                    subtotal = harga * jumlah_barang
+                    total_belanja += subtotal
+                    print(f"\njumlah barang: {jumlah_barang}")
+                    print(f"total harga jumlah barang :Rp. {subtotal}")
+                    break
+                else:
+                    print("jangan angka nol ya")
 
 
-        else:
-            print("\njumlah barang tidak valid")
-    else:
-        print("\nproduk tidak ditemukan")
+            except ValueError:
+                print("\nmasukannya harus angka!")
         
-
+    else:
+        print("\n produk tidak valid")
+        continue
+            
+    
     pilihan = input("\nlanjut belanja (ya/tidak): ").strip().lower()
 
     if pilihan == "ya":
@@ -53,16 +61,28 @@ while True :
     
     
     elif pilihan == "tidak":
-        print(f"\ntotal belanjaan = Rp.{total_belanja}")
-        uang_bayar = int(input("\nmasukan uang pembayaran: Rp."))
+        while True:
+            try:
+                print(f"\ntotal belanjaan = Rp.{total_belanja}")
+                uang_bayar = int(input("\nmasukan uang pembayaran: Rp."))
+                
 
-        while uang_bayar < total_belanja:
-            print("uang pembayaran kurang")
-            uang_bayar = int(input("masukan lagi uang pembayaran: Rp."))
+                if uang_bayar >= total_belanja:
+                    break
+                else:
+                    print("uang pembayaran kurang")
+                    uang_bayar = int(input("masukan lagi uang pembayaran: Rp."))
+                    break
+                    
 
-       
+            except ValueError:
+                print("harus angka bos !")
+            
+
+    
         kembalian = uang_bayar - total_belanja
         total_akhir = total_belanja
+
 
     else:
         print("pilihan tidak valid")
@@ -70,7 +90,7 @@ while True :
 
         
 
-    print(f"total belanjaan = Rp.{total_belanja}")
+    print(f"\ntotal belanjaan = Rp.{total_belanja}")
     print(f"uang bayar = Rp.{uang_bayar}")
     print(f"total kembalian = Rp.{kembalian}")
     print(f"total akhir pembayaran = Rp.{total_akhir}")
@@ -78,8 +98,6 @@ while True :
     break
 
 
-
-    
 
 
         
