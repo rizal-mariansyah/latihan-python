@@ -19,7 +19,7 @@ for nama,harga in produk.items():
     print(f"{nama:<12}: Rp. {harga}")
     total_harga += harga 
 
-
+# koding utama
 while True :
     
     nama_produk = input("\nmasukan nama produk: ").strip().lower()
