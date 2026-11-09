@@ -14,11 +14,11 @@ produk = {"buku": 5000,
           "penggaris": 3000
 }
 
-total_harga = 0
+total_belanja = 0
 
 for nama,harga in produk.items():
     print(f"{nama:<12}: Rp. {harga}")
-    total_harga += harga 
+   
 
 # koding utama
 while True :
@@ -26,7 +26,9 @@ while True :
     nama_produk = input("\nmasukan nama produk: ").strip().lower()
 
     if nama_produk == "selesai":
-        print("program selesai, terima kasih telah berkunjung")
+        print(f"\ntotal belanjaan = Rp.{total_belanja}")
+        print("\nprogram selesai, terima kasih telah berkunjung")
+        
         break
 
     if nama_produk in produk:
@@ -37,6 +39,7 @@ while True :
         if jumlah_barang >0:
             harga = produk[nama_produk]
             subtotal = harga * jumlah_barang
+            total_belanja += subtotal
             print(f"\njumlah barang: {jumlah_barang}")
             print(f"total harga jumlah barang : {subtotal}")
 
