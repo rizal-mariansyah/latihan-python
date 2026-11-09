@@ -13,10 +13,43 @@ produk = {"buku": 5000,
           "penggaris": 3000
 }
 
+total_harga = 0
+
 for nama,harga in produk.items():
     print(f"{nama:<12}: Rp. {harga}")
+    total_harga += harga 
 
-print("\n",40*"-",)
+
+while True :
     
-print( "\njumlah produk: ", len(produk))
+    nama_produk = input("\nmasukan nama produk: ").strip().lower()
+
+    if nama_produk == "selesai":
+        print("program selesai, terima kasih telah berkunjung")
+        break
+
+    if nama_produk in produk:
+        print(f"\nnama produk: {nama_produk}")
+        print(f"harga : Rp.{produk[nama_produk]}")
+
+        jumlah_barang = int(input("\nmasukan jumlah barang yang dibeli: "))
+        if jumlah_barang >0:
+            harga = produk[nama_produk]
+            subtotal = harga * jumlah_barang
+            print(f"\njumlah barang: {jumlah_barang}")
+            print(f"total harga jumlah barang : {subtotal}")
+
+
+        else:
+            print("\njumlah barang tidak valid")
+    else:
+        print("\nproduk tidak ditemukan")
+
+
+
+
+
+
+
+
   
