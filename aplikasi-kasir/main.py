@@ -71,8 +71,7 @@ while True :
                     break
                 else:
                     print("uang pembayaran kurang")
-                    uang_bayar = int(input("masukan lagi uang pembayaran: Rp."))
-                    break
+                    
                     
 
             except ValueError:
