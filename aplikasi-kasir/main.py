@@ -1,3 +1,5 @@
+#penerapan percabangan,perulangan for dan while,try-except
+
 import os
 
 os.system ("cls" if os.name == "nt" else "clear")
