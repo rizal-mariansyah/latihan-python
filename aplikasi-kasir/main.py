@@ -7,6 +7,7 @@ print("========== toko sederhana ==========\n")
 print("Daftar produk\n")
 print(40*"-","\n")
 
+#nama produk
 produk = {"buku": 5000,
           "pensil": 2000,
           "penghapus": 1500,
