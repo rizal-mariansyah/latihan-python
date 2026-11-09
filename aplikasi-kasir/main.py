@@ -21,6 +21,7 @@ for nama,harga in produk.items():
    
 
 # koding utama
+
 while True :
     
     nama_produk = input("\nmasukan nama produk: ").strip().lower()
@@ -42,6 +43,7 @@ while True :
             print("\njumlah barang tidak valid")
     else:
         print("\nproduk tidak ditemukan")
+        
 
     pilihan = input("\nlanjut belanja (ya/tidak): ").strip().lower()
 
@@ -53,6 +55,7 @@ while True :
     elif pilihan == "tidak":
         print(f"\ntotal belanjaan = Rp.{total_belanja}")
         uang_bayar = int(input("\nmasukan uang pembayaran: Rp."))
+
         while uang_bayar < total_belanja:
             print("uang pembayaran kurang")
             uang_bayar = int(input("masukan lagi uang pembayaran: Rp."))
@@ -62,7 +65,8 @@ while True :
         total_akhir = total_belanja
 
     else:
-        print("pembayaran tidak valid")
+        print("pilihan tidak valid")
+        continue
 
         
 
@@ -72,6 +76,9 @@ while True :
     print(f"total akhir pembayaran = Rp.{total_akhir}")
     print("terimakasih telah berkunjung")
     break
+
+
+
     
 
 
