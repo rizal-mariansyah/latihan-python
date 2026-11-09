@@ -53,13 +53,18 @@ while True :
     elif pilihan == "tidak":
         print(f"\ntotal belanjaan = Rp.{total_belanja}")
         uang_bayar = int(input("\nmasukan uang pembayaran: Rp."))
-        if uang_bayar >= total_belanja:
-            kembalian = uang_bayar - total_belanja
-            total_akhir = uang_bayar - kembalian
+        while uang_bayar < total_belanja:
+            print("uang pembayaran kurang")
+            uang_bayar = int(input("masukan lagi uang pembayaran: Rp."))
+
+       
+        kembalian = uang_bayar - total_belanja
+        total_akhir = total_belanja
 
     else:
         print("pembayaran tidak valid")
-        break
+
+        
 
     print(f"total belanjaan = Rp.{total_belanja}")
     print(f"uang bayar = Rp.{uang_bayar}")
